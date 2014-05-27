@@ -1,16 +1,22 @@
 <head>
-	<title>Fuzz Does ToDo</title>
+	<title>Does ToDo</title>
 </head>
 <template name="layout">
 	<div class="header">
 		<h1>Fuzz Todo</h1>
 	</div>
 
-	// if logged in, show logout link
+	{{#if currentUser}}
+		{{> logout}}
 
+		<div class="main">
+			{{> yield}}
+		</div>
+	{{else}}
 	<div class="main">
-		{{> yield}}
+		{{> loginButtons }}
 	</div>
+	{{/if}}
 
 	<div class="bottom">
 		{{> yield region="footer"}}

@@ -9,3 +9,10 @@ Router.map(function() {
 		data: { todoItems: TodoItems.find() }
 	});
 });
+
+Router.map(function() {
+	this.route('login',{
+		path: '*',
+		data: { todoItems: TodoItems.find() }
+	});
+});
