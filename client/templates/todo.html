@@ -1,13 +1,16 @@
 <template name="todo">
 	<form name="todo-form">
 		<label class="button-input">
-			New Item <input type="text" name="newItem">
-			<a href="#" class="button postfix"
+			neW itEm <input type="text" name="new-todo" class="new-todo">
+			<a href="#" class="button postfix form-submit">saVe</a>
 		</label>
 	</form>
+
 	<ul class="todo-list">
 		{{#each todoItems}}
-			<li>{{item}}</li>
+			<li class="todo-item">
+				<input type="checkbox" value="{{_id}}">{{itemText}}
+			</li>
 		{{/each}}
 	</ul>
 </template>

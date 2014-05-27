@@ -1,0 +1,18 @@
+<head>
+	<title>Fuzz Does ToDo</title>
+</head>
+<template name="layout">
+	<div class="header">
+		<h1>Fuzz Todo</h1>
+	</div>
+
+	// if logged in, show logout link
+
+	<div class="main">
+		{{> yield}}
+	</div>
+
+	<div class="bottom">
+		{{> yield region="footer"}}
+	</div>
+</template>
