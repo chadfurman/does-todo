@@ -8,12 +8,9 @@
     "grunt-contrib-compass": "^0.8.0"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "http://github.com/shadesoflight/fuzz-lunch"
+    "url": "https://github.com/shadesoflight/fuzz-todo"
   },
   "keywords": [
     "Meteor"
@@ -21,7 +18,7 @@
   "author": "Chad Furman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shadesoflight/fuzz-lunch/issues"
+    "url": "https://github.com/shadesoflight/fuzz-todo/issues"
   },
-  "homepage": "https://github.com/shadesoflight/fuzz-lunch"
+  "homepage": "https://github.com/shadesoflight/fuzz-todo"
 }
