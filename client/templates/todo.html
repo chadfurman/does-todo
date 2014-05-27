@@ -1,0 +1,13 @@
+<template name="todo">
+	<form name="todo-form">
+		<label class="button-input">
+			New Item <input type="text" name="newItem">
+			<a href="#" class="button postfix"
+		</label>
+	</form>
+	<ul class="todo-list">
+		{{#each todoItems}}
+			<li>{{item}}</li>
+		{{/each}}
+	</ul>
+</template>
