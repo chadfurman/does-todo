@@ -15,12 +15,22 @@ module.exports = function(grunt) {
 				src: 'js/*',
 				dest: '../public/js/app.js'
 			}
+		},
+		watch: {
+			scripts: {
+				files: ['js/*','sass/*'],
+				tasks: ['default'],
+				options: {
+					spawn: false
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.registerTask(
-		'default', ['compass', 'concat']
+		'default', ['compass', 'concat', 'watch']
 	);
 }
