@@ -1,27 +1,35 @@
 define(function(require, exports, module) {
-    // import dependencies
-    var Engine = require('famous/core/Engine');
-    var Modifier = require('famous/core/Modifier');
-    var Transform = require('famous/core/Transform');
-    var ImageSurface = require('famous/surfaces/ImageSurface');
+	var Engine           = require("famous/core/Engine");
+	var ViewSequence     = require("famous/core/ViewSequence");
+	var ImageSurface     = require("famous/surfaces/ImageSurface");
+	var SequentialLayout = require("famous/views/SequentialLayout");
+	var Scrollview       = require("famous/views/Scrollview");
+	var Utility          = require('famous/utilities/Utility');
 
-    // create the main context
-    var mainContext = Engine.createContext();
+	var mainContext = Engine.createContext();
+
+	var sequentialLayout = new Scrollview({
+		direction: Utility.Direction.Y
+	});
+
+	var surfacesSequence = new ViewSequence();
+
 
     // your app here
-    var logo = new ImageSurface({
+	var props = {
         size: [200, 200],
-        content: 'http://code.famo.us/assets/famous_logo.svg',
-        classes: ['double-sided']
-    });
+        content: 'http://lorempixel.com/200/200'
+    };
+	var img1 =  new ImageSurface(props);
+	var img2 =  new ImageSurface(props);
+	var img3 =  new ImageSurface(props);
 
-    var initialTime = Date.now();
-    var centerSpinModifier = new Modifier({
-        origin: [0.5, 0.5],
-        transform : function(){
-            return Transform.rotateY(.002 * (Date.now() - initialTime));
-        }
-    });
+	surfacesSequence.push(img1);
+	surfacesSequence.push(img2);
+	surfacesSequence.push(img3);
+	console.debug(surfacesSequence);
+	sequentialLayout.sequenceFrom(surfacesSequence);
 
-    mainContext.add(centerSpinModifier).add(logo);
+	mainContext.add(sequentialLayout);
 });
+

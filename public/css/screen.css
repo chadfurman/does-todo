@@ -66,3 +66,15 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
+
+/* line 1, ../../private/sass/_famous-fixes.scss */
+.double-sided {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+/* line 1, ../../private/sass/_general.scss */
+html {
+  background-color: #fff;
+  color: #000;
+}

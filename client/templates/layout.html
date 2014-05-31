@@ -26,23 +26,23 @@
 </head>
 <body><!-- layout rendered by iron-router --></body>
 <template name="layout">
-	<div class="header">
-		<h1>Fuzz Todo</h1>
-	</div>
+	<!--<div class="header">-->
+		<!--<h1>Fuzz Todo</h1>-->
+	<!--</div>-->
 
-	{{#if currentUser}}
-		{{> logout}}
+	<!--{{#if currentUser}}-->
+		<!--{{> logout}}-->
 
-		<div class="main">
-			{{> yield}}
-		</div>
-	{{else}}
-		<div class="main">
-			{{> loginButtons }}
-		</div>
-	{{/if}}
+		<!--<div class="main">-->
+			<!--{{> yield}}-->
+		<!--</div>-->
+	<!--{{else}}-->
+		<!--<div class="main">-->
+			<!--{{> loginButtons }}-->
+		<!--</div>-->
+	<!--{{/if}}-->
 
-	<div class="bottom">
-		{{> yield region="footer"}}
-	</div>
+	<!--<div class="bottom">-->
+		<!--{{> yield region="footer"}}-->
+	<!--</div>-->
 </template>
