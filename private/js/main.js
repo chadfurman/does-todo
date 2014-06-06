@@ -1,35 +1,30 @@
 define(function(require, exports, module) {
-	var Engine           = require("famous/core/Engine");
-	var ViewSequence     = require("famous/core/ViewSequence");
-	var ImageSurface     = require("famous/surfaces/ImageSurface");
+	var Engine  = require("famous/core/Engine");
+	var Utility = require('famous/utilities/Utility');
+	var InputSurface = require("famous/surfaces/InputSurface");
 	var SequentialLayout = require("famous/views/SequentialLayout");
-	var Scrollview       = require("famous/views/Scrollview");
-	var Utility          = require('famous/utilities/Utility');
+	var test = require("test");
+
 
 	var mainContext = Engine.createContext();
+	var todoInputLayout = new SequentialLayout({direction:Utility.Direction.X});
+	var todoInputSequence = [];
 
-	var sequentialLayout = new Scrollview({
-		direction: Utility.Direction.Y
-	});
+	todoInputSequence.push(new InputSurface({
+		size: [200,50],
+		name:'new-todo',
+		placeholder:'e.x. "Add Todo Items"',
+		type: 'text',
+		class: 'new-todo'
+	}));
+	todoInputSequence.push(new InputSurface({
+		size: [75,50],
+		type: 'button',
+		value: 'Go',
+		class: 'btn todo-go-btn'
+	}));
 
-	var surfacesSequence = new ViewSequence();
-
-
-    // your app here
-	var props = {
-        size: [200, 200],
-        content: 'http://lorempixel.com/200/200'
-    };
-	var img1 =  new ImageSurface(props);
-	var img2 =  new ImageSurface(props);
-	var img3 =  new ImageSurface(props);
-
-	surfacesSequence.push(img1);
-	surfacesSequence.push(img2);
-	surfacesSequence.push(img3);
-	console.debug(surfacesSequence);
-	sequentialLayout.sequenceFrom(surfacesSequence);
-
-	mainContext.add(sequentialLayout);
+	todoInputLayout.sequenceFrom(todoInputSequence);
+	mainContext.add(todoInputLayout);
 });
 
