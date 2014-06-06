@@ -10,39 +10,19 @@
 	<script type="text/javascript" src="http://code.famo.us/lib/classList.js"></script>
 	<script type="text/javascript" src="http://code.famo.us/lib/requestAnimationFrame.js"></script>
 
-	<!-- module loader -->
+	<!-- RequireJS is a hard dependency of Famo.us -->
 	<script type="text/javascript" src="http://code.famo.us/lib/require.js"></script>
 
-	<!-- famous -->
+	<!-- Famo.us -->
 	<link rel="stylesheet" type="text/css" href="http://code.famo.us/famous/0.2/famous.css" />
 	<script type="text/javascript" src="http://code.famo.us/famous/0.2/famous.min.js"></script>
 
-	<!-- app code -->
+	<!-- custom -->
 	<link rel="stylesheet" type="text/css" href="css/screen.css" />
 	<script type="text/javascript">
 		require.config({baseUrl: 'js/'});
 		require(['app']);
 	</script>
 </head>
-<body><!-- layout rendered by iron-router --></body>
-<template name="layout">
-	<!--<div class="header">-->
-		<!--<h1>Fuzz Todo</h1>-->
-	<!--</div>-->
-
-	<!--{{#if currentUser}}-->
-		<!--{{> logout}}-->
-
-		<!--<div class="main">-->
-			<!--{{> yield}}-->
-		<!--</div>-->
-	<!--{{else}}-->
-		<!--<div class="main">-->
-			<!--{{> loginButtons }}-->
-		<!--</div>-->
-	<!--{{/if}}-->
-
-	<!--<div class="bottom">-->
-		<!--{{> yield region="footer"}}-->
-	<!--</div>-->
-</template>
+<body><!-- template "layout" rendered by iron-router --></body>
+<template name="layout"></template>
