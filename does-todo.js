@@ -6,32 +6,27 @@ if (Meteor.isClient) {
 
   // Make sure dom got a body...
   Meteor.startup(function() {
-    var mainContext = famous.core.Engine.createContext();
-    var renderController = new famous.views.RenderController();
-    var surfaces = [];
-    var counter = 0;
+	  var Engine       = require("famous/core/Engine");
+	  var Modifier     = require("famous/core/Modifier");
+	  var InputSurface = require("famous/surfaces/InputSurface");
 
-    for (var i = 0; i < 10; i++) {
-        surfaces.push(new famous.core.Surface({
-             content: "Surface: " + (i + 1),
-             size: [200, 200],
-             properties: {
-                 backgroundColor: "hsl(" + (i * 360 / 10) + ", 100%, 50%)",
-                 lineHeight: "200px",
-                 textAlign: 'center'
-             }
-        }));
-    }
+	  var mainCtx = Engine.createContext();
 
-    renderController.show(surfaces[0]);
+	  var currentTodoItem = new InputSurface({
+		  size: [200, 200],
+		  name: 'inputSurface',
+		  placeholder: 'e.x. "Add todo items"',
+		  type: 'text'
+	  });
 
-    famous.core.Engine.on("click", function() {
-        var next = (counter++ + 1) % surfaces.length;
-        this.show(surfaces[next]);
-    }.bind(renderController));
+	  var newTodoButton = new InputSurface({
+		  size: [200, 200],
+		  name: 'todo-button',
+		  value: 'Go',
+		  type: 'button'
+	  });
 
-    mainContext.add(new famous.core.Modifier({origin: [.5, .5]})).add(renderController);
-
+	  mainCtx.add(new Modifier({origin: [.5, .5]})).add(currentTodoItem).add(newTodoButton);
   });
 
 }

@@ -2,13 +2,24 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "famono": {}
+      "famono": {},
+      "famous-components": {}
     },
     "packages": {
       "famono": {
         "git": "https://github.com/raix/Meteor-famono.git",
         "tag": "v0.3.2",
         "commit": "1128e321371f33afc2ffacc00923761ecaf462e8"
+      },
+      "famous-components": {
+        "git": "https://github.com/gadicc/meteor-famous-components.git",
+        "tag": "v0.0.11",
+        "commit": "5af796b2253490d7a93950bb3b14241b9610e8fe"
+      },
+      "pince": {
+        "git": "https://github.com/mad-eye/pince.git",
+        "tag": "v0.0.5",
+        "commit": "4524ecc0bdf043c49dc62e91bbd8a99c661081ed"
       }
     }
   }
